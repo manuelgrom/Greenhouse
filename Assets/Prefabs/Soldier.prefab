@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 95951613534465254}
   - component: {fileID: 54622203322871274}
   - component: {fileID: 136729554428331194}
+  - component: {fileID: 114657601717845538}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -687,6 +688,21 @@ GameObject:
   - component: {fileID: 4671892899205462}
   m_Layer: 0
   m_Name: bn_knee_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1837090752546126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4523449715536028}
+  m_Layer: 0
+  m_Name: checkGroundLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,6 +1118,19 @@ Transform:
   m_Father: {fileID: 4539288543889370}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4523449715536028
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837090752546126}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4707811103068868}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4532929771410778
 Transform:
   m_ObjectHideFlags: 1
@@ -1350,6 +1379,7 @@ Transform:
   m_Children:
   - {fileID: 4140130449223934}
   - {fileID: 4358611199145136}
+  - {fileID: 4523449715536028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1561,7 +1591,7 @@ Animator:
   m_GameObject: {fileID: 1682387004779846}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6419b3e96677c6f4ba714dd91a0d4ab4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f332aa9cbce5c9643a6f4fb7c426104c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1570,6 +1600,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114657601717845538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1682387004779846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c55c4c0ef648b040aef1473e70fb777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 8
+  walkSpeed: 1.7
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 0}
+  jumpHeight: 0
 --- !u!136 &136729554428331194
 CapsuleCollider:
   m_ObjectHideFlags: 1
