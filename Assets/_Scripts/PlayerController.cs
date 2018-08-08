@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             m_myRB.AddForce(new Vector3(0, jumpHeight, 0)); //actual jump
             Debug.Log("Space bar pressed");
         }
-        
+
         //Jump collision check
         m_groundCollisions = Physics.OverlapSphere(groundCheck.position, m_groundCheckRadius, groundLayer);
         if (m_groundCollisions.Length > 0)
@@ -82,9 +82,13 @@ public class PlayerController : MonoBehaviour
         m_sneaking = Input.GetAxisRaw("Fire3");
         m_myAnimator.SetFloat("sneaking", m_sneaking);
 
+        float firing = Input.GetAxisRaw("Fire1");
+        m_myAnimator.SetFloat("shooting", firing);
+
         //movement
-        if (m_sneaking > 0 && m_grounded) //shift is pressed
+        if (m_sneaking > 0 || firing > 0 && m_grounded) //shift is pressed
         {
+            
             m_myRB.velocity = new Vector3(m_move * walkSpeed, m_myRB.velocity.y, 0);
         }
         else //shift not pressed 
@@ -100,7 +104,6 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-
     }
 
     //Flipping the Character L/R 
@@ -111,5 +114,17 @@ public class PlayerController : MonoBehaviour
         m_myScale = transform.localScale;
         m_myScale.z *= -1;
         transform.localScale = m_myScale;
+    }
+    // Get the Facing direction of the player
+    public float GetFacing()
+    {
+        if (m_facingRight)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
