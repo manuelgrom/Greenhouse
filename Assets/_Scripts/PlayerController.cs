@@ -41,11 +41,6 @@ public class PlayerController : MonoBehaviour
         m_grounded = false;
     }
 
-    // Update is called once per frame (rate dependent)
-    private void Update()
-    {
-
-    }
     //fixed rate after physic engin is run! Its constant
     private void FixedUpdate()
     {
@@ -69,7 +64,6 @@ public class PlayerController : MonoBehaviour
         {
             m_grounded = false;
             Debug.Log("is not  grounded");
-
         }
 
         m_myAnimator.SetBool("grounded", m_grounded);

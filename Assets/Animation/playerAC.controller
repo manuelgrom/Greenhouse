@@ -244,6 +244,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: sneaking
     m_EventTreshold: 0.1
+  - m_ConditionMode: 4
+    m_ConditionEvent: shooting
+    m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102134902425535568}
   m_Solo: 0
